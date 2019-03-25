@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <br><br>
+      <p class="lead">
+        Filter the results by typing in the search field:
+      </p>
+      <br>
+      <input type="text"
+      class="form-control"
+      placeholder="Type more than three characters"
+      [(ngModel)]="filterText">
+      <br><br>
+      <div class="card">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of data | filter: filterText">
+              <th scope="row">{{item.name}}</th>
+              <td>{{item.amount}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
